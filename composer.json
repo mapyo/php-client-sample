@@ -1,5 +1,6 @@
 {
     "require": {
-        "guzzle/guzzle": "~3.9"
+        "guzzle/guzzle": "~3.9",
+        "commerceguys/guzzle-oauth2-plugin": "~1.0"
     }
 }
