@@ -1,0 +1,6 @@
+base_url = https://mysite.com
+username = name
+password = password
+client_id = your_client_id
+client_secret = your_client_secret
+scope = your_scope
