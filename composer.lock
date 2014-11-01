@@ -4,46 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4663bb9d42d89251dd7521cbe6610339",
+    "hash": "a979ab1d30032c40f0cd7eaf0105b32d",
     "packages": [
-        {
-            "name": "commerceguys/guzzle-oauth2-plugin",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/commerceguys/guzzle-oauth2-plugin.git",
-                "reference": "90b375330080175a9aaad2bc897d1de111813e69"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/commerceguys/guzzle-oauth2-plugin/zipball/90b375330080175a9aaad2bc897d1de111813e69",
-                "reference": "90b375330080175a9aaad2bc897d1de111813e69",
-                "shasum": ""
-            },
-            "require": {
-                "guzzle/guzzle": ">=v3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "CommerceGuys\\Guzzle": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bojan Zivanovic"
-                },
-                {
-                    "name": "Damien Tournoud"
-                }
-            ],
-            "description": "An OAuth2 plugin for guzzle",
-            "time": "2014-05-20 10:02:48"
-        },
         {
             "name": "guzzle/guzzle",
             "version": "v3.9.2",
