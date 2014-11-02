@@ -14,5 +14,5 @@ $params = array(
     'scope'         => $settings['scope'], // Optional.
 );
 
-$data = $client->post('/oauth/token', array(), $params)->send()->json();
+$data = $client->post('oauth/token', array(), $params)->send()->json();
 var_dump($data['access_token']);
