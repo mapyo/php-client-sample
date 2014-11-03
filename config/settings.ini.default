@@ -4,3 +4,5 @@ password = password
 client_id = your_client_id
 client_secret = your_client_secret
 scope = your_scope
+token = your_token
+api_path = your_api_path
