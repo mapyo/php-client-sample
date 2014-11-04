@@ -18,6 +18,12 @@ class ModelTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('mapyo', $this->model->name);
     }
+
+    public function testSettingAProperty()
+    {
+        $this->model->memo = 'History repeats itself.';
+        $this->assertEquals('History repeats itself.', $this->model->memo);
+    }
 }
 
 class ModelStub extends \GuzzleActiveSample\Model
