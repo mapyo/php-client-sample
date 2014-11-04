@@ -17,4 +17,8 @@ class ModelTest extends PHPUnit_Framework_TestCase
 
 class ModelStub extends \GuzzleActiveSample\Model
 {
+    public function __construct($connection)
+    {
+        parent::__construct($connection);
+    }
 }
