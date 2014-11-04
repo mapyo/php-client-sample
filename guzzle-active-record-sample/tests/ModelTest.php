@@ -14,7 +14,7 @@ class ModelTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('GuzzleActiveSample\Connection', $this->model->connection());
     }
 
-    public function testSettingAnArrayOfAttributes
+    public function testSettingAnArrayOfAttributes()
     {
         $this->assertEquals('mapyo', $this->model->name);
     }
@@ -28,8 +28,11 @@ class ModelTest extends PHPUnit_Framework_TestCase
 
 class ModelStub extends \GuzzleActiveSample\Model
 {
-    public function __construct($connection)
+    protected $fillable = array('name', 'memo');
+
+    public function __construct($connection, $attributes = array())
     {
         parent::__construct($connection);
+        $this->fill($attributes);
     }
 }
