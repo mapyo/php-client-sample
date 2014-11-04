@@ -48,4 +48,32 @@ class Connection
             ),
         ));
     }
+
+    public function get($url, array $params = [])
+    {
+        $request = $this->client()->createRequest('GET', $url);
+        $query = $request->getQuery();
+
+        foreach($params as $k => $v) {
+            $query->set($k, $v);
+        }
+
+        return $this->client()->send($request);
+    }
+
+    public function post($url, $body)
+    {
+        return $this->client()->post($url, null, $body);
+    }
+
+    public function put($url, $body)
+    {
+        return $this->client()->put($url, null, $body);
+    }
+
+    public function delete($url)
+    {
+        return $this->client()->delete($url);
+    }
+
 }
