@@ -1,6 +1,5 @@
 <?php
 $loader = require '../vendor/autoload.php';
-$loader->add('Mapyo\\', __DIR__);
 
-var_dump(Mapyo\Settings::base_url());
+var_dump(GuzzleActiveSample\Settings::base_url());
 

@@ -1,5 +1,5 @@
 <?php
-namespace Mapyo;
+namespace GuzzleActiveSample;
 use Guzzle\Http\Client;
 
 class Connection
@@ -43,18 +43,18 @@ class Connection
             'request.options' => array(
                 'headers' => array(
                     'Content-Type' => 'application/json',
-                    'Authorization' => "Bearer ${settings['token']}",
+                    'Authorization' => "Bearer {$this->token}",
                 ),
             ),
         ));
     }
 
-    public function get($url, array $params = [])
+    public function get($url, array $params = array())
     {
         $request = $this->client()->createRequest('GET', $url);
         $query = $request->getQuery();
 
-        foreach($params as $k => $v) {
+        foreach ($params as $k => $v) {
             $query->set($k, $v);
         }
 

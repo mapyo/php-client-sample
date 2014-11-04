@@ -1,5 +1,13 @@
 {
     "require": {
         "guzzle/guzzle": "~3.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "GuzzleActiveSample\\": "guzzle-active-record-sample/src"
+        }
     }
 }

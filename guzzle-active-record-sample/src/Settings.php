@@ -1,5 +1,5 @@
 <?php
-namespace Mapyo;
+namespace GuzzleActiveSample;
 
 class Settings
 {
