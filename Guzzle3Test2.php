@@ -5,13 +5,14 @@ use Guzzle\Http\Client;
 
 $settings = parse_ini_file('config/settings.ini');
 
-$client = new Client($settings['base_url']);
-$client->setDefaultOption('headers',
-    array(
-        'Content-Type' => 'application/json',
-        'Authorization' => "Bearer ${settings['token']}",
-    )
-);
+$client = new Client($settings['base_url'], array(
+    'request.options' => array(
+        'headers' => array(
+            'Content-Type' => 'application/json',
+            'Authorization' => "Bearer ${settings['token']}",
+        ),
+    ),
+));
 
 # get
 $response = $client->get(
