@@ -2,6 +2,7 @@
 namespace GuzzleActiveSample;
 
 use GuzzleActiveSample\Meta\Base;
+use Sirius\Validation\Validator;
 
 abstract class Model
 {
@@ -11,6 +12,9 @@ abstract class Model
      * @var GuzzleActiveSample\Connection
      */
     protected $connection;
+
+    protected $validator;
+    protected $errors;
 
     protected $attributes = array();
     protected $fillable = array();
@@ -87,5 +91,33 @@ abstract class Model
     public function base()
     {
         return new Base($this);
+    }
+
+    /**
+     * Validate
+     *
+     * @return bool
+     */
+    public function validate()
+    {
+        $validator = new Validator;
+        $validator->add($this->rules);
+
+        if($validator->validate($this->attributes)) {
+            return true;
+        }
+
+        $this->errors = $validator->getMessages();
+        return false;
+    }
+
+    /**
+     * Return the validation errors
+     *
+     * @return array
+     */
+    public function errors()
+    {
+        return $this->error;
     }
 }

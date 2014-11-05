@@ -45,6 +45,7 @@ class ModelTest extends PHPUnit_Framework_TestCase
 class ModelStub extends \GuzzleActiveSample\Model
 {
     protected $fillable = array('name', 'memo');
+    protected $rules = array('memo'=>'required');
 
     public function __construct($connection, $attributes = array())
     {
