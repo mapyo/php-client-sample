@@ -1,6 +1,8 @@
 <?php
 namespace GuzzleActiveSample;
 
+use GuzzleActiveSample\Meta\Base;
+
 abstract class Model
 {
     /**
@@ -80,5 +82,10 @@ abstract class Model
         }
 
         throw new \Exception("{$key} is not a valid property");
+    }
+
+    public function base()
+    {
+        return new Base($this);
     }
 }

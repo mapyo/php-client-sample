@@ -24,6 +24,11 @@ class ModelTest extends PHPUnit_Framework_TestCase
         $this->model->memo = 'History repeats itself.';
         $this->assertEquals('History repeats itself.', $this->model->memo);
     }
+
+    public function testGetPluralEntityName()
+    {
+        $this->assertEquals('modelstubs', $this->model->base()->lowercase()->plural());
+    }
 }
 
 class ModelStub extends \GuzzleActiveSample\Model
