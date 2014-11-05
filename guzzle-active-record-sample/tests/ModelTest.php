@@ -29,6 +29,17 @@ class ModelTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('modelstubs', $this->model->base()->lowercase()->plural());
     }
+
+    public function testValidatingFailsWithMissingRequiredMemo()
+    {
+        $this->assertFalse($this->model->validate());
+    }
+
+    public function testValidatignPassesWithRequiredEmail()
+    {
+        $this->model->memo = 'History repeats itself.';
+        $this->assertTrue($this->model->validate());
+    }
 }
 
 class ModelStub extends \GuzzleActiveSample\Model
