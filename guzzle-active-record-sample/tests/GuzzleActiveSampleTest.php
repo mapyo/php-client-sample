@@ -1,5 +1,5 @@
 <?php
-user Mocke as m;
+use Mockery as m;
 
 class GuzzleActiveSampleTest extends PHPUnit_Framework_TestCase
 {
@@ -9,6 +9,9 @@ class GuzzleActiveSampleTest extends PHPUnit_Framework_TestCase
         $this->guzzleActive = new GuzzleActiveSample\GuzzleActiveSample($connection);
     }
 
+    /**
+     * @expectedException Exception
+     */
     public function testGuzzleActiveSample()
     {
         $c = new GuzzleActiveSample\GuzzleActiveSample('');
