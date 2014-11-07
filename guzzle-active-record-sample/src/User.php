@@ -1,4 +1,10 @@
 <?php
 namespace GuzzleActiveSample;
 
-class User {}
+class User extends Model
+{
+    public function __construct(Connection $connection)
+    {
+        parent::__construct($connection);
+    }
+}

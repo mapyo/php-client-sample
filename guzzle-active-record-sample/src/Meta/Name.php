@@ -27,7 +27,7 @@ class Name
         return new Name(Pluralizer::plural($this->name));
     }
 
-    public function singular()
+    public function singlar()
     {
         return new Name(Pluralizer::singular($this->name));
     }

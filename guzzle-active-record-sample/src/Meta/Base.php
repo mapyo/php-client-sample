@@ -28,9 +28,9 @@ class Base
         return $this->getNameInstance()->plural();
     }
 
-    public function singular()
+    public function singlar()
     {
-        return $this->getNameInstance()->singular();
+        return $this->getNameInstance()->singlar();
     }
 
     public function getNameInstance()

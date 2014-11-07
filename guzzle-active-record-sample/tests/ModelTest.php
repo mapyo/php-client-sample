@@ -46,6 +46,7 @@ class ModelStub extends \GuzzleActiveSample\Model
 {
     protected $fillable = array('name', 'memo');
     protected $rules = array('memo'=>'required');
+    protected $queryableOptions = array('plural'=>'the_plural_name');
 
     public function __construct($connection, $attributes = array())
     {

@@ -20,6 +20,13 @@ abstract class Model
     protected $fillable = array();
 
     /**
+     * The model's queryable options
+     *
+     * @var array
+     */
+    protected $queryableOptions = array();
+
+    /**
      * __construct
      *
      * @param  GuzzleActiveSample\Connection $connection
@@ -119,5 +126,20 @@ abstract class Model
     public function errors()
     {
         return $this->error;
+    }
+
+    /**
+     * Return the queryable options
+     *
+     * @return array
+     */
+    public function getQueryableOptions()
+    {
+        return $this->queryableOptions;
+    }
+
+    public function queryableOptions()
+    {
+        return new Options($this);
     }
 }
