@@ -17,9 +17,9 @@ class GuzzleActiveSampleTest extends PHPUnit_Framework_TestCase
         $c = new GuzzleActiveSample\GuzzleActiveSample('');
     }
 
-    public function testCreateNewUserModel()
+    public function testCreateNewProductModel()
     {
-        $this->assertInstanceOf('GuzzleActiveSample\User', $this->guzzleActive->user());
+        $this->assertInstanceOf('GuzzleActiveSample\Product', $this->guzzleActive->product());
     }
 
 }

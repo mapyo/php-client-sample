@@ -21,8 +21,8 @@ class GuzzleActiveSample
         $this->connection = $connection;
     }
 
-    public function user()
+    public function product()
     {
-        return new User($this->connection);
+        return new Product($this->connection);
     }
 }
