@@ -33,13 +33,13 @@ class QueryingTest extends PHPUnit_Framework_TestCase
 
     public function testFindAllReturnsAllEntities()
     {
-        $stub = file_get_contents(dirname(__FILE__) . '/stubs/stub.json');
+        $stub = file_get_contents(dirname(__FILE__) . '/stubs/stubs.json');
         $this->message->shouldReceive('json')->andReturn(json_encode($stub, true));
         $this->connection->shouldReceive('get')->andReturn($this->message);
 
         $response = $this->model->all();
 
-        $this->assertTrue(isset($response['stub']));
+        $this->assertTrue(isset($response['stubs']));
     }
 }
 

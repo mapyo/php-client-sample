@@ -70,7 +70,7 @@ abstract class Model
 
     protected function fill(array $attributes)
     {
-        foreach($this->fillableFromArray($attributes) as $key => $value) {
+        foreach ($this->fillableFromArray($attributes) as $key => $value) {
             if ($this->isFillable($key)) {
                 $this->setAttribute($key, $value);
             }
@@ -79,7 +79,7 @@ abstract class Model
 
     public function __get($key)
     {
-        if(isset($this->attributes[$key])) {
+        if (isset($this->attributes[$key])) {
             return $this->attributes[$key];
         }
 
@@ -88,7 +88,7 @@ abstract class Model
 
     public function __set($key, $value)
     {
-        if($this->isFillable($key)) {
+        if ($this->isFillable($key)) {
             return $this->setAttribute($key, $value);
         }
 
@@ -110,11 +110,12 @@ abstract class Model
         $validator = new Validator;
         $validator->add($this->rules);
 
-        if($validator->validate($this->attributes)) {
+        if ($validator->validate($this->attributes)) {
             return true;
         }
 
         $this->errors = $validator->getMessages();
+
         return false;
     }
 
@@ -142,4 +143,28 @@ abstract class Model
     {
         return new Options($this);
     }
+
+    /**
+     * Find a single entity by it's id
+     *
+     * @param  int  $id
+     */
+    public function find($id)
+    {
+        $endpoint = '/v1/' . $this->queryableOptions()->plural() . '/' . $id . '.json';
+
+        $response = $this->connection->get($endpoint);
+
+        return $response->json();
+    }
+
+    public function all()
+    {
+        $endpoint = '/v1/' . $this->queryableOptions()->plural() . '.json';
+
+        $response = $this->connection->get($endpoint);
+
+        return $response->json();
+    }
+
 }
