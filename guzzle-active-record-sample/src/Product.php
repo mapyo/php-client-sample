@@ -1,7 +1,7 @@
 <?php
 namespace GuzzleActiveSample;
 
-class User extends Model
+class Product extends Model
 {
     public function __construct(Connection $connection)
     {
