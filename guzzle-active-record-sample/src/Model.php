@@ -27,6 +27,13 @@ abstract class Model
     protected $queryableOptions = array();
 
     /**
+     * The model's serializable config
+     *
+     * @var array
+     */
+    protected $serializableConfig = array();
+
+    /**
      * __construct
      *
      * @param  GuzzleActiveSample\Connection $connection
@@ -165,6 +172,25 @@ abstract class Model
         $response = $this->connection->get($endpoint);
 
         return $response->json();
+    }
+
+    /**
+     * Return the serializable options
+     *
+     * @return array
+     */
+    public function serializableOptions()
+    {
+        $this->setSerializableOptionArray();
+        return array_merge($this->serializableOptions, $this->serializableConfig);
+    }
+
+    private function setSerializableOptionArray()
+    {
+        $this->serializableOptions = array(
+            'root' => $this->base()->lowercase()->singular(),
+            'collection_root' => $this->base()->lowercase()->plural(),
+        );
     }
 
 }
