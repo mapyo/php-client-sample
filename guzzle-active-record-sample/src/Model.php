@@ -34,6 +34,13 @@ abstract class Model
     protected $serializableConfig = array();
 
     /**
+     * An array of serializable options
+     *
+     * @var array
+     */
+    protected $serializableOptions;
+
+    /**
      * __construct
      *
      * @param  GuzzleActiveSample\Connection $connection

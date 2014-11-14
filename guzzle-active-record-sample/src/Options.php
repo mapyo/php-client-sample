@@ -21,7 +21,7 @@ class Options
     {
         $base = array(
             'plural' => $model->base()->lowercase()->plural(),
-            'singlar' => $model->base()->lowercase()->singlar(),
+            'singlar' => $model->base()->lowercase()->singular(),
         );
         $this->options = array_merge($base, $model->getQueryableOptions());
     }
