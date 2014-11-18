@@ -16,13 +16,11 @@ class SerializableTest extends PHPUnit_Framework_TestCase
 
     public function testShouldGetSerializableOptions()
     {
-        $option = $this->model->serializableOptions();
+        $options = $this->model->serializableOptions();
 
-        // var_dump($option['collection_root']);
-        var_dump($option);
         $this->assertTrue(is_array($options));
         $this->assertTrue(is_array($options['root']));
-        $this->assertEquals('serializablemodesstabs', $option['collection_root']);
+        $this->assertEquals('serializablemodelstubs', $options['collection_root']);
     }
 }
 
