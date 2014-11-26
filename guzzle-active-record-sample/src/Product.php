@@ -3,7 +3,6 @@ namespace GuzzleActiveSample;
 
 class Product extends Model
 {
-
     /**
      * The model's fillable attributes
      *
@@ -13,7 +12,7 @@ class Product extends Model
         'name',
         'price',
         'stocks',
-        );
+    );
 
     public function __construct(Connection $connection)
     {
