@@ -19,6 +19,10 @@ class ProductTest extends PHPUnit_Framework_TestCase
     /** @test */
     public function find_product_by_id()
     {
+        $this->markTestIncomplete(
+            'This test has not been implemented yet.'
+        );
+
         $response = file_get_contents(dirname(__FILE__) . '/stubs/product.json');
         $this->message->shouldReceive('json')->andReturn(json_decode($response, true));
         $this->connection->shouldReceive('get')->andReturn($this->message);
