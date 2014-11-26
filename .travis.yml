@@ -12,4 +12,4 @@ before_script:
 
 script:
   - cd guzzle-active-record-sample
-  - vendor/bin/phpunit
+  - ../vendor/bin/phpunit
