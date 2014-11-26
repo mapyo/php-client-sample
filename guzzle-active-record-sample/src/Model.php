@@ -178,7 +178,9 @@ abstract class Model
 
         $response = $this->connection->get($endpoint);
 
-        return $response->json();
+        $normalizer = new Normalizer($this);
+
+        return $normalizer->model($response);
     }
 
     /**
