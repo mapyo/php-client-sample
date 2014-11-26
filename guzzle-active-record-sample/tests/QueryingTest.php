@@ -23,7 +23,7 @@ class QueryingTest extends PHPUnit_Framework_TestCase
     public function testFindOneReturnsOneEntry()
     {
         $stub = file_get_contents(dirname(__FILE__) . '/stubs/stub.json');
-        $this->message->shouldReceive('json')->andReturn(json_encode($stub, true));
+        $this->message->shouldReceive('json')->andReturn(json_decode($stub, true));
         $this->connection->shouldReceive('get')->andReturn($this->message);
 
         $response = $this->model->find(1);
@@ -34,7 +34,7 @@ class QueryingTest extends PHPUnit_Framework_TestCase
     public function testFindAllReturnsAllEntities()
     {
         $stub = file_get_contents(dirname(__FILE__) . '/stubs/stubs.json');
-        $this->message->shouldReceive('json')->andReturn(json_encode($stub, true));
+        $this->message->shouldReceive('json')->andReturn(json_decode($stub, true));
         $this->connection->shouldReceive('get')->andReturn($this->message);
 
         $response = $this->model->all();
