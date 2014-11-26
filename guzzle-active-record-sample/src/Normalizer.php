@@ -50,6 +50,7 @@ class Normalizer
         if($this->hasSubclasses()) {
             return $this->normalizeSubclass($attributes);
         }
+        // return $this->normalizeModel($attributes);
     }
 
     /**
@@ -60,7 +61,7 @@ class Normalizer
      */
     public function collection(array $attributes)
     {
-        if($this->hasSubclasses() {
+        if($this->hasSubclasses()) {
             return $this->normalizeSubclassCollection($attributes);
         }
 
@@ -92,7 +93,8 @@ class Normalizer
             return $this->root = $this->options['root'];
         }
 
-        return $this->root = $this->model->serializableOptions()['root'];
+        $options = $this->model->serializableOptions();
+        return $this->root = $options['root'];
     }
 
     /**
@@ -139,7 +141,7 @@ class Normalizer
                 $collection[] = $this->createNewModelInstance($key, $value);
             } else {
                 foreach($value as $attributes) {
-                    $collection[] = $this->createNewModelInstance($key, $attributes)
+                    $collection[] = $this->createNewModelInstance($key, $attributes);
                 }
             }
         }
@@ -162,7 +164,8 @@ class Normalizer
             return $this->collection_root = $options['collection_root'];
         }
 
-        return $this->collection_root = $this->model->serializableOptions()['collection_root'];
+        $options = $this->model->serializableOptions();
+        return $this->collection_root = $options['collection_root'];
     }
 
     /**

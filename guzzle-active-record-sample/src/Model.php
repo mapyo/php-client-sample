@@ -167,16 +167,18 @@ abstract class Model
     {
         $endpoint = '/v1/' . $this->queryableOptions()->plural() . '/' . $id . '.json';
 
-        $response = $this->connection->get($endpoint);
+        $response = $this->connection->get($endpoint)->json();
 
-        return $response->json();
+        $normalizer = new Normalizer($this);
+
+        return $normalizer->model($response);
     }
 
     public function all()
     {
         $endpoint = '/v1/' . $this->queryableOptions()->plural() . '.json';
 
-        $response = $this->connection->get($endpoint);
+        $response = $this->connection->get($endpoint)->json();
 
         $normalizer = new Normalizer($this);
 
