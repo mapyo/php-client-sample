@@ -24,7 +24,6 @@ class ProductTest extends PHPUnit_Framework_TestCase
         $this->connection->shouldReceive('get')->andReturn($this->message);
 
         $product = $this->product->find(100);
-        var_dump($product);
         $this->assertInstanceOf('GuzzleActiveSample\Product', $product);
     }
 }
