@@ -11,5 +11,6 @@ before_script:
   - composer install --no-interaction --prefer-source --dev
 
 script:
+  - cp config/settings.ini.default config/settings.ini
   - cd guzzle-active-record-sample
   - ../vendor/bin/phpunit
