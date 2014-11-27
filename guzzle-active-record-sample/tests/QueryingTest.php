@@ -28,6 +28,9 @@ class QueryingTest extends PHPUnit_Framework_TestCase
 
         $response = $this->model->find(1);
 
+        $this->markTestIncomplete(
+            'normalizeModelがまだ出来てない.'
+        );
         $this->assertTrue(isset($response['stub']));
     }
 
@@ -39,6 +42,9 @@ class QueryingTest extends PHPUnit_Framework_TestCase
 
         $response = $this->model->all();
 
+        $this->markTestIncomplete(
+            'normalizeModelがまだ出来てない.'
+        );
         $this->assertTrue(isset($response['stubs']));
     }
 }
